@@ -31,6 +31,6 @@ setTimeout(function(){
     };
     console.log(`Hai indovinato ${usersNumbers.length} numeri`);
     console.log(`Hai indovinato ${usersNumbers}`)
-} ,5000);
+} , 30 * 1000);
 
 console.log(numbers)
