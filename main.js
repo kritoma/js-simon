@@ -14,11 +14,21 @@ while (numbers.length < 5) {
     }
 };
 
-alert(numbers);
 
+const list = document.getElementById("list-number");
+for (let i = 0; i < numbers.length; i++) {
+    let element = document.createElement("li");
+    element.classList.add("number");
+    element.innerText = numbers[i];
+    list.append(element);
+};
+
+const btn = document.querySelector(".btn")
 const usersNumbers = [];
 
-setTimeout(function(){
+btn.addEventListener("click", function(){
+    list.remove();
+    setTimeout(function(){
     for (let i = 0; i < 5; i++) {
         let usersNumber
         do {
@@ -29,8 +39,10 @@ setTimeout(function(){
             usersNumbers.push(usersNumber);
         };
     };
-    console.log(`Hai indovinato ${usersNumbers.length} numeri`);
-    console.log(`Hai indovinato ${usersNumbers}`)
+    document.getElementById("text1").innerHTML = `Hai indovinato ${usersNumbers.length} numeri`;
+    document.getElementById("text2").innerHTML = `Hai indovinato ${usersNumbers}`
 } , 30 * 1000);
+});
+
 
 console.log(numbers)
